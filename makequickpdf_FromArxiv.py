@@ -20,7 +20,7 @@ print("Your total number of paper is : ", len(my_list2))
 
 print("I am doing/downloading it for first 4 papers; if you want to do it for all, then change the range")
 
-for i in range(6, 10):
+for i in range(1, 5):
     paper = next(arxiv.Client().results(arxiv.Search(id_list=[my_list2[i]])))
     # Download the PDF to the PWD with a default filename.
     paper.download_pdf(filename=my_list2[i]+".pdf")
@@ -29,7 +29,7 @@ for i in range(6, 10):
 string1 = "A. Pathak"
 with open("test-output5.pdf", "wb") as fp:
     writer = PyPDF2.PdfWriter()
-    for i in range(6, 10):
+    for i in range(1, 5):
         print("reading : "+ my_list2[i] + " now")
         reader = PyPDF2.PdfReader(my_list2[i]+".pdf")
         writer.add_page(reader.pages[0])
